@@ -1,0 +1,17 @@
+CREATE TABLE products
+(
+  name VARCHAR(20),
+  category VARCHAR(30),
+  PRIMARY KEY (name)
+);
+
+CREATE TABLE price_info
+(
+  name VARCHAR(20),
+  price FLOAT,
+  start_date DATE,
+  end_date DATE,
+  PRIMARY KEY (name)
+);
+
+SELECT a.name, a.price, b.category FROM price_info a LEFT JOIN products b ON a.name = b.name;
